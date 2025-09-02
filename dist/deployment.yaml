@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: trend-app
-        image: <your-dockerhub-username>/trend:latest
+        image: mohamed7431/trend-app:latest  # ✅ Correct Docker Hub image
         ports:
         - containerPort: 80
