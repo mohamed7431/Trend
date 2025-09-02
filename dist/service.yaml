@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: trend-service
   annotations:
-    # Force LB to use a specific subnet
     service.beta.kubernetes.io/aws-load-balancer-subnets: subnet-04117aa9e3d99d6c8
 spec:
   selector:
