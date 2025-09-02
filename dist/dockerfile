@@ -1,7 +1,11 @@
+# Use Nginx to serve static files
 FROM nginx:alpine
 
-# Copy all files in current folder (the build output) into Nginx web root
-COPY . /usr/share/nginx/html
+# Copy the build output into Nginx web root
+COPY dist/ /usr/share/nginx/html
 
+# Expose port 80
 EXPOSE 80
+
+# Run Nginx in foreground
 CMD ["nginx", "-g", "daemon off;"]
