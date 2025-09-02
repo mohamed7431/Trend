@@ -1,8 +1,8 @@
 # Use Nginx to serve static files
 FROM nginx:alpine
 
-# Copy your static app files into Nginx web root
-COPY app/ /usr/share/nginx/html
+# Copy all project files (HTML, CSS, JS, images) into Nginx web root
+COPY . /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
