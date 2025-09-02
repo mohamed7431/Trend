@@ -48,8 +48,11 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        kubectl apply -f k8s/deployment.yaml
+                        # Apply service first (optional if already exists)
                         kubectl apply -f k8s/service.yaml
+                        # Apply deployment (this pulls the latest image)
+                        kubectl apply -f k8s/deployment.yaml
+                        kubectl rollout status deployment trend-app
                     '''
                 }
             }
